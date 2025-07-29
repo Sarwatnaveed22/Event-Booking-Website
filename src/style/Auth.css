@@ -1,0 +1,199 @@
+/* Auth Page General Styles */
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Beautiful bluish background gradient */
+    background: linear-gradient(135deg, #328cc4, #6ea4ce, #e0f8ff); /* Lighter, more vibrant blue gradient */
+    padding: 2rem 1rem;
+    box-sizing: border-box; /* Ensure padding doesn't add to total width/height */
+}
+
+.auth-container {
+    background-color: #ffffff;
+    padding: 3rem 2.5rem; /* Increased padding for a more spacious feel */
+    border-radius: 18px; /* More rounded corners */
+    /* Enhanced shadow for depth and professionalism */
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 480px; /* Slightly wider container */
+    text-align: center;
+    border: 1px solid #e0e0e0; /* Subtle border */
+    animation: fadeIn 0.7s ease-out forwards; /* Add fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-header {
+    margin-bottom: 2.5rem; /* More space below header */
+}
+
+.auth-logo {
+    width: 90px; /* Slightly larger logo */
+    height: 90px;
+    margin-bottom: 1.5rem; /* More space below logo */
+    /* Add a subtle shadow to the logo */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 50%; /* Ensure it's circular if it's a square image */
+}
+
+.auth-header h2 {
+    font-size: 2.4rem; /* Larger and more impactful heading */
+    color: #2c3e50; /* Darker, professional blue-gray */
+    margin-bottom: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Subtle text shadow */
+}
+
+.auth-header p {
+    color: #7f8c8d; /* Softer gray for tagline */
+    font-size: 1.05rem; /* Slightly larger tagline */
+    line-height: 1.5;
+}
+
+/* Auth Form Styles */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Increased gap between form groups */
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.6rem; /* More space below label */
+    color: #34495e; /* Darker text for labels */
+    font-weight: 600;
+    font-size: 1rem; /* Slightly larger label font */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1.1rem 1.2rem; /* More padding for inputs */
+    border: 1px solid #dcdcdc; /* Lighter border */
+    border-radius: 10px; /* More rounded input fields */
+    font-size: 1.05rem; /* Slightly larger input font */
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #3498db; /* Professional blue on focus */
+    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.2); /* Softer, wider shadow on focus */
+}
+
+.auth-btn {
+    /* Beautiful bluish button with professional size */
+    background: linear-gradient(to right, #4a90e2, #2e86de); /* A more vibrant and beautiful blue gradient */
+    color: white;
+    padding: 0.9rem 1.5rem; /* Reduced padding for professional size */
+    border: none;
+    border-radius: 10px; /* More rounded button */
+    font-size: 1.05rem; /* Reduced font size for professional look */
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth animation for hover/active states */
+    /* Stronger shadow for the button */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    margin-top: 1.8rem; /* More space above button */
+}
+
+.auth-btn:hover {
+    background: linear-gradient(to right, #2e86de, #4a90e2); /* Reverse gradient on hover */
+    transform: translateY(-3px); /* Lift button on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
+}
+
+.auth-btn:active {
+    /* Button turns green when clicked */
+    background: linear-gradient(to right, #27ae60, #2ecc71); /* Green gradient on active */
+    transform: translateY(0); /* Press down effect */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Auth Footer */
+.auth-footer {
+    margin-top: 2rem; /* More space above footer */
+    color: #7f8c8d; /* Consistent softer gray */
+    font-size: 0.95rem;
+}
+
+.auth-footer a {
+    color: #3498db; /* Consistent blue for links */
+    text-decoration: none;
+    font-weight: 600;
+    transition: text-decoration 0.3s ease;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .auth-container {
+        padding: 2rem 1.5rem;
+        margin: 0 1rem;
+        border-radius: 15px; /* Slightly less rounded on small screens */
+    }
+
+    .auth-header {
+        margin-bottom: 2rem;
+    }
+
+    .auth-logo {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 1rem;
+    }
+
+    .auth-header h2 {
+        font-size: 2rem;
+    }
+
+    .auth-header p {
+        font-size: 0.95rem;
+    }
+
+    .auth-form {
+        gap: 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input {
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+        border-radius: 8px;
+    }
+
+    .auth-btn {
+        padding: 0.8rem 1.2rem; /* Adjusted padding for mobile professional size */
+        font-size: 0.95rem; /* Adjusted font size for mobile professional look */
+        margin-top: 1.5rem;
+        border-radius: 8px;
+    }
+
+    .auth-footer {
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+    }
+}

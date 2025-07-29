@@ -1,0 +1,259 @@
+/* Hero Section */
+/* .about-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 10%;
+  background: linear-gradient(to right, #fefefe, #f0f3f8);
+  text-align: center;
+  color: #222;
+}
+
+.about-image-container {
+  max-width: 850px;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.about-hero-img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+.about-hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #3b4cca;
+}
+
+.about-hero-text p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  color: #444;
+  margin: 0 auto;
+} */
+
+.about-hero {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.about-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.about-hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(3px) brightness(0.75);
+  transform: scale(1.05);
+}
+
+.about-hero-text-overlay {
+  position: relative;
+  z-index: 2;
+  color: #fefeff;
+  text-align: center;
+  padding: 3rem 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.about-hero-text-overlay h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.about-hero-text-overlay p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+/* Our Story Section */
+.our-story {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 10%;
+  background: #f5f7fa;
+  flex-wrap: wrap;
+}
+
+.story-text {
+  flex: 1 1 400px;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.7;
+}
+
+.story-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #3b4cca;
+}
+
+.story-text p {
+  font-size: 1.05rem;
+  color: #444;
+}
+
+.story-image {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.story-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards for Mission, Vision */
+.info-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 4em;
+}
+
+.info-card {
+  background: linear-gradient(to bottom, #ffffff, #f0f4ff);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+}
+
+.info-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.info-card h3 {
+  font-size: 1.4rem;
+  color: #3b4cca;
+  margin-bottom: 0.5rem;
+}
+
+.info-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+  background-color: #111827;
+  color: #f9fafb;
+  padding: 3rem 10%;
+  margin-top: 4rem;
+}
+
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.footer-columns > div {
+  flex: 1 1 200px;
+}
+
+.footer h3,
+.footer h4 {
+  margin-bottom: 1rem;
+}
+
+.footer p,
+.footer li {
+  font-size: 0.9rem;
+  color: #d1d5db;
+}
+
+.footer a {
+  color: #d1d5db;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  text-align: center;
+  border-top: 1px solid #374151;
+  padding-top: 1rem;
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .info-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-hero-text p {
+    font-size: 1rem;
+  }
+
+  .info-card {
+    width: 90%;
+  }
+
+  .our-story {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .story-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .story-text p {
+    font-size: 1rem;
+  }
+}

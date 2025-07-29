@@ -1,0 +1,130 @@
+/* BusinessBookingEvent.css */
+
+.business-event-page {
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.no-event-message {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 24px;
+  padding: 40px;
+  color: #555;
+}
+
+/* Optional: Navbar reuse (if not globally styled) */
+.navbar {
+  background-color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.nav-links a {
+  margin: 0 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.auth-buttons .login-btn,
+.auth-buttons .signup-btn {
+  margin-left: 10px;
+  padding: 6px 12px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.auth-buttons .signup-btn {
+  background-color: #28a745;
+}
+/* Footer */
+.footer {
+  background-color: #111827;
+  color: #f9fafb;
+  padding: 3rem 10%;
+}
+
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.footer-columns > div {
+  flex: 1 1 200px;
+}
+
+.footer h3,
+.footer h4 {
+  margin-bottom: 1rem;
+}
+
+.footer p,
+.footer li {
+  font-size: 0.9rem;
+  color: #d1d5db;
+}
+
+.footer a {
+  color: #d1d5db;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  text-align: center;
+  border-top: 1px solid #374151;
+  padding-top: 1rem;
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .steps,
+  .row,
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

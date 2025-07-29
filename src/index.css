@@ -1,0 +1,223 @@
+/* Import Google Font - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Subtle gradient background */
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  color: #333; /* Default text color */
+}
+
+/* General Container Styling */
+.login-container, .signup-container, .home-content {
+  flex-grow: 1; /* Allow content to take available space */
+}
+
+/* Card Styling for Login/Signup Forms */
+.login-card, .signup-card {
+  max-width: 450px;
+  width: 100%;
+  border: none;
+  border-radius: 15px; /* More rounded corners */
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+  backdrop-filter: blur(5px); /* Frosted glass effect */
+  animation: fadeInScale 0.5s ease-out; /* Animation on load */
+}
+
+/* Input Field Styling */
+.form-control-lg {
+  border-radius: 10px; /* Rounded input fields */
+  padding: 0.75rem 1rem;
+  border: 1px solid #ced4da;
+  transition: all 0.3s ease;
+}
+
+.form-control-lg:focus {
+  border-color: #9370DB; /* Purple border on focus */
+  box-shadow: 0 0 0 0.25rem rgba(147, 112, 219, 0.25); /* Purple shadow on focus */
+  transform: translateY(-2px); /* Slight lift on focus */
+}
+
+/* Button Styling */
+.btn-lg {
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.login-button {
+  background-color: #8A2BE2; /* Blue Violet */
+  border-color: #8A2BE2;
+}
+
+.login-button:hover {
+  background-color: #6A0DAD; /* Darker purple */
+  border-color: #6A0DAD;
+  transform: translateY(-3px); /* Lift effect on hover */
+  box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+}
+
+.signup-button {
+  background-color: #9932CC; /* Dark Orchid */
+  border-color: #9932CC;
+}
+
+.signup-button:hover {
+  background-color: #800080; /* Purple */
+  border-color: #800080;
+  transform: translateY(-3px); /* Lift effect on hover */
+  box-shadow: 0 5px 15px rgba(153, 50, 204, 0.3);
+}
+
+.home-button {
+  min-width: 120px; /* Ensure buttons have consistent width */
+}
+
+.logout-button {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+}
+
+/* Link Button Styling */
+.btn-link {
+  color: #8A2BE2; /* Purple link color */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.btn-link:hover {
+  color: #6A0DAD; /* Darker purple on hover */
+  text-decoration: underline;
+}
+
+/* Alert Styling */
+.alert {
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.shake-animation {
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Home Page Specific Styling */
+.home-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.home-content h1 {
+  font-size: 3.5rem;
+  color: #007bff; /* Kept original blue for homepage */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.home-content p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .login-card, .signup-card {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .home-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-content p {
+    font-size: 1rem;
+  }
+
+  .btn-lg {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Animation for home page elements */
+.animate__animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate__fadeInDown {
+  animation-name: fadeInDown;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate__fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate__zoomIn {
+  animation-name: zoomIn;
+}

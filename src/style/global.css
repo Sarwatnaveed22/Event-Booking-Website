@@ -1,0 +1,46 @@
+/* Font Imports from Google Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* Also keep your other font imports */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Pacifico&family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap');
+/* Global Reset & Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width/height */
+}
+
+body {
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.6; /* Spacing between lines of text */
+    color: #333; /* Default text color */
+    background-color: #f8f9fc; /* Default background color */
+}
+
+/* Common Button Styles */
+.primary-btn {
+    background: linear-gradient(to right, #2563eb, #cb4501); /* Gradient background for main buttons */
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+}
+
+.primary-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px); /* Slightly lift button on hover */
+}
+
+/* General Link Styles */
+a {
+    text-decoration: none; /* Removes underline from links by default */
+    color: inherit; /* Links inherit color from parent element */
+}
+
+a:hover {
+    text-decoration: underline; /* Adds underline on hover for clarity */
+}
