@@ -1,12 +1,167 @@
-# React + Vite
+Event Booking Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **Full-Stack MERN Event Booking Platform** developed as a Software Engineering project. The application enables users to discover, book, and manage events through a responsive, secure, and user-friendly interface while demonstrating modern web development practices using the MERN stack.
 
-Currently, two official plugins are available:
+ Project Overview
+The Event Booking Website is a full-stack web application designed to simplify the process of browsing and booking events. Users can create an account, explore different event categories, view event details, add events to their cart, and complete bookings. The system provides a smooth and interactive experience while maintaining secure communication between the frontend and backend.
+The project follows a modular architecture, separating the frontend, backend, and database layers for better scalability and maintainability.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ Features
 
-## Expanding the ESLint configuration
+ User Management
+ User Registration
+ Secure Login & Authentication
+ User Session Management
+ Protected Routes
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ Event Management
+ Browse Available Events
+ View Detailed Event Information
+ Multiple Event Categories
+ Dynamic Event Listings
+
+ Shopping Cart
+Add Events to Cart
+Remove Events from Cart
+Update Cart Items
+View Selected Bookings
+
+ Booking System
+ Book Events Online
+ Booking Confirmation
+ Easy Reservation Process
+ Booking Management
+
+ Responsive User Interface
+ Mobile-Friendly Design
+Modern React Components
+ Interactive Navigation
+ Clean User Experience
+
+ Backend
+RESTful APIs
+ Express.js Server
+MongoDB Database
+Mongoose ODM
+CRUD Operations
+Error Handling
+
+
+Technology Stack
+
+Frontend
+ React.js
+ Vite
+ React Router DOM
+ Bootstrap
+ React Bootstrap
+ Axios
+ React Icons
+ 
+ Backend
+ Node.js
+ Express.js
+
+ Database
+  MongoDB
+Mongoose
+
+Development Tools
+ Git
+GitHub
+Visual Studio Code
+ npm
+
+---
+
+ Project Structure
+
+Event-Booking-Website
+│
+├── Models/
+├── Routes/
+├── src/
+│   ├── Components/
+│   ├── Contexts/
+│   ├── Pages/
+│   ├── Styles/
+│   ├── Images/
+│   └── App.jsx
+│
+├── server.js
+├── db.js
+├── package.json
+└── README.md
+
+
+ Getting Started
+ Clone the Repository
+
+bash
+git clone https://github.com/Sarwatnaveed22/Event-Booking-Website.git
+
+
+### Navigate to Project
+
+bash
+cd Event-Booking-Website
+
+
+Install Dependencies
+
+bash
+npm install
+
+
+ Run Frontend
+
+bash
+npm run dev
+
+
+### Run Backend
+bash
+node server.js
+
+Learning Outcomes
+
+This project demonstrates practical knowledge of:
+
+- Full-Stack MERN Development
+- React Component Architecture
+- REST API Development
+- MongoDB Database Design
+- Express.js Backend
+- Authentication & Routing
+- React Context API
+- CRUD Operations
+- State Management
+- Responsive Web Design
+- Git & GitHub Version Control
+
+
+
+ Future Enhancements
+
+-  Online Payment Integration
+- Email Notifications
+-  SMS Booking Confirmation
+- Ratings & Reviews
+-  Wishlist
+-  Advanced Search & Filters
+-  Admin Dashboard
+-  QR Code Ticket Generation
+-  Cloud Deployment
+-  Analytics Dashboard
+
+
+
+Developer
+Sarwat Naveed
+
+BS Software Engineering
+
+
+ Support
+
+If you found this project useful, consider giving it a Star on GitHub.
