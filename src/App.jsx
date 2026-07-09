@@ -11,11 +11,14 @@ import ArtBookingEvent from './pages/ArtBookingEvent';
 import BusinessBookingEvent from './pages/BusinessBookingEvent';
 import LitratureBookingEvent from './pages/LitratureBookingEvent';
 import AboutUs from './pages/AboutUs';
+import CartPage from './pages/CartPage';
 import './style/HomePage.css';
 import './style/Auth.css';
 import './style/global.css';
 import './style/BrowseEvents.css';
 import './style/EventDetail.css';
+
+
 
 function App() {
   return (
@@ -32,6 +35,7 @@ function App() {
         <Route path="/business-events" element={<BusinessBookingEvent/>} />
         <Route path="/litrature-events" element={<LitratureBookingEvent/>} />
         <Route path='/about' element={<AboutUs/>}/>
+        <Route path='/cart' element={<CartPage/>}/>
       </Routes>
     </Router>
   );

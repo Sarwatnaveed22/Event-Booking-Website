@@ -6,8 +6,9 @@ import logo from "../images/logo.png";
 import drawing1 from "../images/drawing.jpg";
 import Sculpure from "../images/sculpting.jpg";
 import bannerImg from "../images/aa.jpeg";
-import ArtBookingPanel from "../pages/ArtBookingPanel";
-
+// import ArtBookingPanel from "../pages/ArtBookingPanel";
+import cartIcon from "../images/shopping-cart.png";
+import UniversalBookingPanel from './UniversalBookingPanel';
 const ArtEvents = [
   {
     id: 1,
@@ -55,6 +56,7 @@ export default function ArtBookingEvent() {
           <a href="#">How it Works</a>
           <a href="#">About</a>
           <a href="#">Contact</a>
+
         </nav>
         <div className="auth-buttons">
           <Link to="/login">
@@ -62,6 +64,9 @@ export default function ArtBookingEvent() {
           </Link>
           <Link to="/signup">
             <button className="signup-btn">Signup</button>
+          </Link>
+          <Link to="/cart" className="cart-icon-wrapper">
+          <img src={cartIcon} alt="Cart" className="cart-icon" />
           </Link>
         </div>
       </header>
@@ -98,7 +103,7 @@ export default function ArtBookingEvent() {
 
       {/* Side panel */}
       {showPanel && selectedEvent && (
-        <ArtBookingPanel
+        <UniversalBookingPanel
           event={selectedEvent}
           onClose={() => {
             setShowPanel(false);
@@ -124,6 +129,7 @@ export default function ArtBookingEvent() {
                       </a>
                     </li>
                     <li><a href="#">Contact</a></li>
+                    
                   </ul>
                 </div>
                 <div>

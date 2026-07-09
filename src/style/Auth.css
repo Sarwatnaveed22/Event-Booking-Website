@@ -10,6 +10,22 @@
     box-sizing: border-box; /* Ensure padding doesn't add to total width/height */
 }
 
+.back-arrow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  margin: 20px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.back-arrow:hover {
+  color: #007bff;
+}
+
 .auth-container {
     background-color: #ffffff;
     padding: 3rem 2.5rem; /* Increased padding for a more spacious feel */

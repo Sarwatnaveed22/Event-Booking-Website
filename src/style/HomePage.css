@@ -89,6 +89,54 @@ body {
   color: white !important;
 }
 
+/* Responsive behavior */
+@media (max-width: 1400px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .auth-buttons {
+    gap: 10px;
+  }
+
+  .brand-name {
+    font-size: 1.2rem;
+  }
+
+  .login-btn,
+  .signup-btn {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+
+  .logo-img {
+    height: 35px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .nav-links {
+    flex-basis: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .auth-buttons {
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 /* Hero */
 /* .hero {
   height: 100vh;
@@ -404,20 +452,9 @@ body {
 }
 
 .cart-icon {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
-}
-
-.cart-count {
-  position: absolute;
-  top: -6px;
-  right: -8px;
-  background-color: rgb(62, 116, 223);
-  color: white;
-  font-size: 12px;
-  padding: 2px 6px;
-  border-radius: 50%;
 }
 
 .profile-icon {
@@ -444,3 +481,43 @@ body {
     text-align: center;
   }
 }
+.profile-icon.img{
+  height: 200px;
+  width: 200px;
+}
+.profile-popup p {
+  color: blue; /* Good Morning text blue ho jayega */
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile-popup .logout-btn {
+  background-color: transparent;
+  border: none;
+  color: red; /* Sign Out button red ho jayega */
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+.profile-popup .logout-btn:hover {
+  color: darkred;
+}
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  user-select: none;
+}
+

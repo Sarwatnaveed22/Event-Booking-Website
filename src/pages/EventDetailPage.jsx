@@ -4,8 +4,8 @@ import events from '../events'; // Ensure this path is correct
 import logo from '../images/logo.png'; // Ensure this path is correct
 import '../style/HomePage.css'; // Assuming you have this path correct
 import '../style/EventDetail.css'; // Assuming you have this path correct
-import BookEventPanel from './BookEventPanel'; // <- Import booking panel
-
+// import BookEventPanel from './BookEventPanel'; // <- Import booking panel
+import UniversalBookingPanel from './UniversalBookingPanel';
 export default function EventDetailPage() {
     const { id } = useParams();
     const navigate = useNavigate();
@@ -117,7 +117,7 @@ export default function EventDetailPage() {
 
             {/* Booking Panel */}
             {showBookingPanel && (
-                <BookEventPanel
+                <UniversalBookingPanel
                     event={{
                         name: event.title,
                         location: event.location,

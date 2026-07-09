@@ -8,7 +8,8 @@ import cybersecurityImage from "../images/cybersecurity.jpg";
 import webDevImage from "../images/webdev.jpg";
 import dataImage from "../images/data.jpg";
 import techBanner from "../images/Tech_Banner.jpg";
-import TechBookingPanel from "./TechBookingPanel";
+// import TechBookingPanel from "./TechBookingPanel";
+import UniversalBookingPanel from './UniversalBookingPanel';
 
 const TechEvents = [
   {
@@ -124,7 +125,7 @@ export default function TechBookingEvent() {
 
       {/* ✅ Booking Side Panel */}
       {showPanel && selectedEvent && (
-        <TechBookingPanel
+        <UniversalBookingPanel
           event={selectedEvent}
           onClose={() => {
             setShowPanel(false);

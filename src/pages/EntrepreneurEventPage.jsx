@@ -6,7 +6,8 @@ import bannerImg from "../images/entrepreneur_banner.jpg";
 import womenImg from "../images/Women_confrence.jpg";
 import pitchImg from "../images/StartUpPitch.jpg";
 import bootcampImg from "../images/Entrepenur.jpg";
-import EntrepreneurBookingPanel from "./EntrepreneurBookingPanel";
+// import EntrepreneurBookingPanel from "./EntrepreneurBookingPanel";
+import UniversalBookingPanel from './UniversalBookingPanel';
 
 const entrepreneurEvents = [
   {
@@ -122,7 +123,7 @@ export default function EntrepreneurEventPage() {
 
       {/* ✅ Booking Side Panel */}
       {showPanel && selectedEvent && (
-        <EntrepreneurBookingPanel
+        <UniversalBookingPanel
           event={selectedEvent}
           onClose={() => {
             setShowPanel(false);

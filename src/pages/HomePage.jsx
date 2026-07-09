@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import events from "../events";
 import "../style/HomePage.css";
@@ -11,14 +11,29 @@ import litratureImg from "../images/Litrature.jpg";
 import num1 from "../images/num1.png";
 import num2 from "../images/num2.png";
 import num3 from "../images/num3.png";
-import cartIcon from "../images/cart-icon.png";
+import cartIcon from "../images/shopping-cart.png";
 import profileIcon from "../images/profile-icon.png";
+import { useAuth } from '../contexts/authContext';
+import { CartContext } from '../contexts/cartContext';  // Added import
 
 export default function HomePage() {
   const bookSectionRef = useRef(null);
   const howItWorksRef = useRef(null);
-  const contactRef = useRef(null); 
+  const contactRef = useRef(null);
 
+  const { userInfo, setuserInfo } = useAuth();
+
+  const [showPopup, setShowPopup] = useState(false);
+
+  const { cartItems } = useContext(CartContext);  // Get cart items from context
+  const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0); // Calculate total quantity
+
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    setuserInfo(null);
+    setShowPopup(false);
+    window.location.href = "/login";
+  };
 
   const handleScroll = () => {
     bookSectionRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -27,10 +42,10 @@ export default function HomePage() {
   const scrollToHowItWorks = () => {
     howItWorksRef.current?.scrollIntoView({ behavior: "smooth" });
   };
-  const scrollToContact = () => {
-  contactRef.current?.scrollIntoView({ behavior: "smooth" });
-};
 
+  const scrollToContact = () => {
+    contactRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="homepage">
@@ -40,41 +55,56 @@ export default function HomePage() {
           <img src={logo} className="logo-img" alt="Eventify Logo" />
           <span className="brand-name">Eventify</span>
         </div>
+
         <nav className="nav-links">
           <Link to="/">Home</Link>
           <Link to="/browse-events">Browse Events</Link>
           <a onClick={scrollToHowItWorks} style={{ cursor: "pointer" }}>How it Works</a>
           <Link to="/about">About</Link>
           <a onClick={scrollToContact} style={{ cursor: "pointer" }}>Contact</a>
-
         </nav>
-        {/* <div className="auth-buttons">
-          <Link to="/login">
-            <button className="login-btn">Login</button>
-          </Link>
-          <Link to="/signup">
-            <button className="signup-btn">Signup</button>
-          </Link>
+
+        <div className="auth-buttons">
+          {userInfo && userInfo.name ? (
+            <>
+              <Link to="/cart" className="cart-icon-wrapper" style={{ position: 'relative', display: 'inline-block' }}>
+                <img src={cartIcon} alt="Cart" className="cart-icon" />
+                {totalQuantity > 0 && (
+                  <span className="cart-badge">{totalQuantity}</span>
+                )}
+              </Link>
+              <div style={{ position: 'relative' }}>
+                <img
+                  src={profileIcon}
+                  alt="Profile"
+                  className="profile-icon"
+                  onClick={() => setShowPopup(!showPopup)}
+                  style={{ cursor: 'pointer' }}
+                />
+                {showPopup && (
+                  <div className="profile-popup">
+                    <p>Good Morning, <strong>{userInfo.name}</strong>!</p>
+                    <button className="logout-btn" onClick={handleLogout}>
+                      Sign Out
+                    </button>
+                  </div>
+                )}
+              </div>
+            </>
+          ) : (
+            <>
+              <Link to="/login">
+                <button className="login-btn">Login</button>
+              </Link>
+              <Link to="/signup">
+                <button className="signup-btn">Signup</button>
+              </Link>
+              <Link to="/signup" className="cart-icon-wrapper">
+                <img src={cartIcon} alt="Cart" className="cart-icon" />
+              </Link>
+            </>
+          )}
         </div>
-      </header> */}
-
-      <div className="auth-buttons">
-        <Link to="/login">
-          <button className="login-btn">Login</button>
-        </Link>
-        <Link to="/signup">
-          <button className="signup-btn">Signup</button>
-        </Link>
-
-        <Link to="/cart" className="cart-icon-wrapper">
-          <img src={cartIcon} alt="Cart" className="cart-icon" />
-          
-        </Link>
-
-        <Link to="/profile">
-          <img src={profileIcon} alt="Profile-icon" className="profile-icon" />
-        </Link>
-      </div>
       </header>
 
       {/* Hero Section */}
@@ -92,45 +122,45 @@ export default function HomePage() {
       <section className="how-it-works" ref={howItWorksRef}>
         <h2>How It Works</h2>
         <div className="steps">
-        <div className="step-card">
-          <div className="heptagon-icon">
-            <img src={num1} alt="Browse" />
+          <div className="step-card">
+            <div className="heptagon-icon">
+              <img src={num1} alt="Browse" />
+            </div>
+            <h3>Browse Events</h3>
+            <p>Explore curated events based on your interests.</p>
           </div>
-          <h3>Browse Events</h3>
-          <p>Explore curated events based on your interests.</p>
-        </div>
 
-        <div className="step-card">
-          <div className="heptagon-icon">
-            <img src={num2} alt="View Details" />
+          <div className="step-card">
+            <div className="heptagon-icon">
+              <img src={num2} alt="View Details" />
+            </div>
+            <h3>View Details</h3>
+            <p>Read full information including speakers and schedules.</p>
           </div>
-          <h3>View Details</h3>
-          <p>Read full information including speakers and schedules.</p>
-        </div>
 
-        <div className="step-card">
-          <div className="heptagon-icon">
-            <img src={num3} alt="Register" />
+          <div className="step-card">
+            <div className="heptagon-icon">
+              <img src={num3} alt="Register" />
+            </div>
+            <h3>Register</h3>
+            <p>Sign up instantly and receive confirmation emails.</p>
           </div>
-          <h3>Register</h3>
-          <p>Sign up instantly and receive confirmation emails.</p>
-        </div>
         </div>
       </section>
 
-       {/* Event Categories */}
+      {/* Event Categories */}
       <section className="categories" ref={bookSectionRef}>
         <h2>Event Categories</h2>
         <div className="category-grid">
           <div className="row">
-              <div className="category-card">
+            <div className="category-card">
               <img src={techImg} alt="Tech Event" />
               <h3>Tech</h3>
               <Link to="/tech-events">
                 <button className="book-btn">Book Now</button>
               </Link>
             </div>
-            
+
             <div className="category-card">
               <img src={artImg} alt="Art Event" />
               <h3>Art</h3>
@@ -173,7 +203,11 @@ export default function HomePage() {
         <div className="event-grid">
           {events.slice(0, 3).map((event) => (
             <div className="event-card" key={event.id}>
-            <img src={event.imageUrl} alt={event.title} style={{ width: "100%", height: "180px", objectFit: "cover", borderRadius: "8px", marginBottom: "1rem" }} />
+              <img
+                src={event.imageUrl}
+                alt={event.title}
+                style={{ width: "100%", height: "180px", objectFit: "cover", borderRadius: "8px", marginBottom: "1rem" }}
+              />
               <h3>{event.title}</h3>
               <p className="event-category">{event.category}</p>
               <p>{event.description}</p>

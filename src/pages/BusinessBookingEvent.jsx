@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../style/BusinessBookingEvent.css";
 import logo from "../images/logo.png";
-
+import cartIcon from "../images/shopping-cart.png";
 export default function BusinessBookingEvent() {
     const scrollToHowItWorks = () => {
     howItWorksRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -22,6 +22,9 @@ export default function BusinessBookingEvent() {
           <a href="#">How it Works</a>
           <a href="#">About</a>
           <a href="#">Contact</a>
+          <Link to="/cart" className="cart-icon-wrapper">
+          <img src={cartIcon} alt="Cart" className="cart-icon" />
+         </Link>
         </nav>
         <div className="auth-buttons">
           <Link to="/login">

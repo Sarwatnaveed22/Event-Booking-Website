@@ -1,0 +1,289 @@
+/* Navbar styling */
+.navbar {
+  background: #ffffff;
+  padding: 1rem 3%;
+  border-bottom: 2px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 65px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+}
+
+.logo-img {
+  height: 40px;
+  margin-bottom: 0; /* Remove extra bottom margin */
+}
+
+.brand-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #3b4cca;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a, .nav-links a:visited, .nav-links a:hover {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #3b4cca;
+}
+
+/* Cart Wrapper & Container */
+.cart-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  background-color: #f2f5f9;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cart-container {
+  width: 95%;
+  max-width: 800px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.cart-title {
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.empty-message {
+  font-size: 18px;
+  text-align: center;
+  color: #888;
+  padding: 40px 0;
+}
+
+/* Cart Items */
+.simple-cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.simple-cart-item img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-item-details {
+  flex: 1;
+  margin-left: 16px;
+}
+
+.item-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.item-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item-controls button {
+  background-color: #ddd;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+.item-controls button:hover {
+  background-color: #bbb;
+}
+
+.item-price {
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Remove button */
+.remove-btn {
+  margin-left: 10px;
+  padding: 6px 12px;
+  background-color: #e63946;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.3s ease;
+}
+
+.remove-btn:hover {
+  background-color: #c82333;
+}
+
+/* Summary */
+.summary-box {
+  background-color: #f6f6f6;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.summary-row.total {
+  font-weight: bold;
+  font-size: 17px;
+  margin-top: 16px;
+}
+
+/* Checkout Button */
+.checkout-btn {
+  width: 100%;
+  background-color: #28a745;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #218838;
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 30px 25px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeInScale 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  background-color: #f2f2f2;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  background-color: #28a745;
+  border-radius: 50%;
+}
+
+/* Modal Summary */
+.checkout-summary {
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* Book Button */
+.book-now-btn {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  font-size: 15px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.book-now-btn:hover {
+  background-color: #0056b3;
+}
+
+.success-message {
+  color: #28a745;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Animation */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#heading3 {
+  text-align: center;
+}

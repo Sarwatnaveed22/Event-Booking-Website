@@ -1,23 +1,28 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
-import logo from '../images/logo.png'; // Assuming you have this path correct
-import '../style/Auth.css'; // Assuming you have this path correct
+import { Link, useNavigate } from 'react-router-dom'; 
+import logo from '../images/logo.png';
+import '../style/Auth.css'; 
+import { useAuth } from '../contexts/authContext';
+import { FaArrowLeft } from 'react-icons/fa';
+import axios from 'axios';
 
 export default function SignupPage() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState(''); // Added for confirmation
-    const [message, setMessage] = useState(''); // State for messages
-    const [messageType, setMessageType] = useState(''); // 'success' or 'error'
-    const navigate = useNavigate(); // Initialize navigate hook
+    const [confirmPassword, setConfirmPassword] = useState(''); 
+    const [message, setMessage] = useState(''); 
+    const [messageType, setMessageType] = useState(''); 
+    const navigate = useNavigate(); 
 
-    const handleSubmit = async (e) => { // Made async to simulate API call
+    const { userInfo, setuserInfo } = useAuth();
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setMessage(''); // Clear previous messages
+        setMessage('');
         setMessageType('');
 
-        // Basic validation
+        // Validation
         if (!name || !email || !password || !confirmPassword) {
             setMessage('All fields are required.');
             setMessageType('error');
@@ -30,43 +35,42 @@ export default function SignupPage() {
             return;
         }
 
-        if (password.length < 6) { // Example: Minimum password length
+        if (password.length < 6) {
             setMessage('Password must be at least 6 characters long.');
             setMessageType('error');
             return;
         }
 
-        // Simulate signup logic
-        console.log('Signup attempt with:', { name, email, password });
-
         try {
-            // Simulate an API call for signup
-            // In a real application, you would send this data to your backend
-            await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate network delay
-
-            // Simulate successful signup
-            setMessage('Account created successfully! Redirecting to home...');
+            const res = await axios.post('http://localhost:5000/api/users/signup', {
+                name,
+                email,
+                password,
+            });
+            setuserInfo(res.data); 
+            localStorage.setItem('userInfo', JSON.stringify(res.data)); 
+            setMessage('Account created successfully! Redirecting to login...');
             setMessageType('success');
-            // Clear form fields after successful signup
-            setName('');
-            setEmail('');
-            setPassword('');
-            setConfirmPassword('');
 
-            // Redirect to homepage after a short delay to show success message
             setTimeout(() => {
-                navigate('/'); // Navigate to the home page
+                navigate('/login'); 
             }, 1000);
         } catch (error) {
-            console.error('Signup error:', error);
-            setMessage('An error occurred during signup. Please try again.');
-            setMessageType('error');
-        }
+  console.error('Registration failed:', error);
+  const errMsg = error.response?.data?.error || 'Registration failed. Please try again.';
+  setMessage(errMsg);
+  setMessageType('error');
+}
+
     };
 
     return (
         <div className="auth-page">
             <div className="auth-container">
+                <div className="back-arrow" onClick={() => navigate('/')}>
+                    <FaArrowLeft style={{ marginRight: '8px' }} />
+                    <span>Back</span>
+                </div>
                 <div className="auth-header">
                     {/* Fallback for logo if image is not found */}
                     <img src={logo} alt="Eventify Logo" className="auth-logo" onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/100x100/aabbcc/ffffff?text=Logo"; }} />
@@ -112,7 +116,8 @@ export default function SignupPage() {
                             required
                         />
                     </div>
-                    <div className="form-group"> {/* Added Confirm Password field */}
+                    <div className="form-group"> 
+                        {/* Added Confirm Password field */}
                         <label htmlFor="confirm-password">Confirm Password</label>
                         <input
                             type="password"

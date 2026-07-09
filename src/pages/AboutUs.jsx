@@ -1,12 +1,13 @@
-
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "../style/aboutus.css";
-import logo from "../images/logo.png";
 import mission from "../images/mission.avif";
 import vision from "../images/vision.jpg";
 import journey from "../images/journey.jpg";
 import about from "../images/about.avif";
+import '../style/HomePage.css';
+import '../style/BrowseEvents.css'; 
+import Header from './Header';
 
 export default function AboutUs() {
   const howItWorksRef = useRef(null);
@@ -23,28 +24,7 @@ export default function AboutUs() {
   return (
     <div className="aboutus-page">
       {/* --- Header/Navbar --- */}
-      <header className="navbar">
-        <div className="navbar-left">
-          <img src={logo} alt="Eventify Logo" className="logo-img" />
-          <span className="brand-name">Eventify</span>
-        </div>
-        <nav className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/browse-events">Browse Events</Link>
-          <a onClick={scrollToHowItWorks} style={{ cursor: "pointer" }}>How it Works</a>
-          <Link to="/about">About</Link>
-          <a onClick={scrollToContact} style={{ cursor: "pointer" }}>Contact</a>
-        </nav>
-        <div className="auth-buttons">
-          <Link to="/login">
-            <button className="login-btn">Login</button>
-          </Link>
-          <Link to="/signup">
-            <button className="signup-btn">Signup</button>
-          </Link>
-        </div>
-      </header>
-
+      <Header />
       {/* --- Hero Section with Full Image and Blur --- */}
       <section className="about-hero">
         <div className="about-image-wrapper">

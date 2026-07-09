@@ -4,7 +4,7 @@ import events from '../events'; // Ensure this path is correct
 import logo from '../images/logo.png'; // Ensure this path is correct
 import '../style/HomePage.css'; // Assuming you have this path correct
 import '../style/BrowseEvents.css'; // Assuming you have this path correct
-
+import cartIcon from "../images/shopping-cart.png";
 export default function BrowseEventsPage() {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('All');
@@ -35,10 +35,14 @@ export default function BrowseEventsPage() {
                     <Link to="/#how-it-works">How it Works</Link>
                     <Link to="/#about">About</Link>
                     <Link to="/#contact">Contact</Link>
+                    
                 </nav>
                 <div className="auth-buttons">
                     <Link to="/login"><button className="login-btn">Login</button></Link>
                     <Link to="/signup"><button className="signup-btn">Signup</button></Link>
+                    <Link to="/cart" className="cart-icon-wrapper">
+                    <img src={cartIcon} alt="Cart" className="cart-icon" />
+                    </Link>
                 </div>
             </header>
 

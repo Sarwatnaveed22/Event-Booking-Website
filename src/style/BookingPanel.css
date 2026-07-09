@@ -1,0 +1,163 @@
+/* Panel background like Art-event-page */
+.booking-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 420px;
+  height: 100vh;
+  background: #f8f9fa;
+  padding: 2rem;
+  border-left: 1px solid #ddd;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow-y: auto;
+  border-radius: 20px 0 0 20px;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header */
+.booking-header {
+    display: flex;
+   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.booking-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3e29fc;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: #d46a6a;
+}
+
+/* Form styling */
+.booking-form label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: #333;
+}
+
+.booking-form input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  margin-top: 0.25rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-size: 0.95rem;
+  transition: border 0.2s ease;
+}
+
+.booking-form input[readonly] {
+  background-color: #f9fafb;
+  color: #555;
+}
+
+/* Ticket counter */
+.ticket-counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ticket-counter button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.ticket-counter button:hover {
+  background-color: #1e4fd3;
+}
+
+.ticket-counter span {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(to left, #f6944e, #2c6fff);
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.add-to-cart-btn:hover {
+  transform: translateY(-2px);
+}
+
+.cart-icon {
+  height: 18px;
+}
+
+/* Confirm Button */
+.confirm-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #d46a6a;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.confirm-btn:hover {
+  background-color: #af3c3c;
+  transform: translateY(-2px);
+}
+
+/* Success popup */
+.success-popup {
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #d1fae5;
+  border: 1px solid #10b981;
+  color: #065f46;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .booking-panel {
+    padding: 20px;
+    margin: 20px;
+  }
+}
