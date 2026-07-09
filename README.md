@@ -8,29 +8,23 @@ The project follows a modular architecture, separating the frontend, backend, an
 
  Features
 
- User Management
- User Registration
- Secure Login & Authentication
- User Session Management
- Protected Routes
-
- Event Management
- Browse Available Events
- View Detailed Event Information
- Multiple Event Categories
- Dynamic Event Listings
+- Event Management
+- Browse Available Events
+-View Detailed Event Information
+- Multiple Event Categories
+-Dynamic Event Listings
 
  Shopping Cart
-Add Events to Cart
-Remove Events from Cart
-Update Cart Items
-View Selected Bookings
+- Add Events to Cart
+- Remove Events from Cart
+- Update Cart Items
+- View Selected Bookings
 
  Booking System
- Book Events Online
- Booking Confirmation
- Easy Reservation Process
- Booking Management
+- Book Events Online
+- Booking Confirmation
+- Easy Reservation Process
+- Booking Management
 
  Responsive User Interface
  Mobile-Friendly Design
