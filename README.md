@@ -27,46 +27,47 @@ The project follows a modular architecture, separating the frontend, backend, an
 - Booking Management
 
  Responsive User Interface
- Mobile-Friendly Design
-Modern React Components
- Interactive Navigation
- Clean User Experience
+ - Mobile-Friendly Design
+ - Modern React Components
+ - Interactive Navigation
+ - Clean User Experience
 
  Backend
-RESTful APIs
- Express.js Server
-MongoDB Database
-Mongoose ODM
-CRUD Operations
-Error Handling
+- RESTful APIs
+- Express.js Server
+- MongoDB Database
+- Mongoose ODM
+- CRUD Operations
+- Error Handling
 
 
 Technology Stack
 
 Frontend
- React.js
- Vite
- React Router DOM
- Bootstrap
- React Bootstrap
- Axios
- React Icons
+- React.js
+- Vite
+- React Router DOM
+- Bootstrap
+- React Bootstrap
+- Axios
+- React Icons
+
  
  Backend
- Node.js
- Express.js
+- Node.js
+- Express.js
 
  Database
-  MongoDB
-Mongoose
+- MongoDB
+- Mongoose
 
 Development Tools
- Git
-GitHub
-Visual Studio Code
- npm
+- Git
+- GitHub
+- Visual Studio Code
+- npm
 
----
+
 
  Project Structure
 
