@@ -8,7 +8,7 @@ const app = express();
 const PORT = 5000;
 
 // ✅ MongoDB connection URI
-const MONGO_URI = "mongodb+srv://sarwat:sarwat09@cluster0.y4og21s.mongodb.net/eventbooking?retryWrites=true&w=majority&appName=Cluster0";
+const MONGO_URI = process.env.MONGO_URI;
 
 // ✅ Middleware
 app.use(cors());
